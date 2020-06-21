@@ -1,0 +1,23 @@
+/* PHP Attempt at https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/*/
+
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var numberOfSteps  = function(num) {
+    if (num == 0) {
+        return 0;
+    }
+    var i = 0;
+    while (num > 0) {
+        if (num % 2 == 0) {
+            i++;
+            num /= 2;   
+        }
+        else {
+            i++;
+            num -= 1;   
+        }
+    }
+    return i;
+};
