@@ -1,0 +1,15 @@
+/*PHP Attempt at https://leetcode.com/problems/to-lower-case/*/
+
+class Solution {
+
+    /**
+     * @param String $str
+     * @return String
+     */
+    function toLowerCase($str) {
+        
+        $small = strtolower($str);
+        return $small;
+    }
+    
+}
