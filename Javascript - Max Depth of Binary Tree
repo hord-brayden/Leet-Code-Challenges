@@ -1,0 +1,34 @@
+/* Javascript Attempt at https://leetcode.com/problems/maximum-depth-of-binary-tree/*/
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val) n
+ *     this.left = (left===undefined ? null : left) l 
+ *     this.right = (right===undefined ? null : right) r
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    var bigBrain = function(x) {
+    /* Return Zero if root contains no values */
+    if (x == null) {
+        return 0;
+        }
+    var thisWay = bigBrain(x.left);
+    var thatWay = bigBrain(x.right);
+        if (thisWay > thatWay) {
+            thisWay++;
+            return thisWay;
+        }
+        else {
+            thatWay++;
+            return thatWay;
+        }
+        
+    }
+    return bigBrain(root);
+};
