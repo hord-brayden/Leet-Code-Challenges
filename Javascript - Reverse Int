@@ -1,0 +1,15 @@
+/* Javascript attempt at https://leetcode.com/problems/reverse-integer/*/
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    var y = x.toString().split('').reverse().join('');
+    var z = Math.sign(x) * parseInt(y);
+    if(z >= Math.pow(2,31) || z <= Math.pow(-2,31)) {
+        return 0;
+    }
+    else {
+        return z;
+    }
+};
